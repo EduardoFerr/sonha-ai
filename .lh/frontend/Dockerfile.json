@@ -1,0 +1,34 @@
+{
+    "sourceFile": "frontend/Dockerfile",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1747766907076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1747769819558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,7 @@\n # Expõe a porta\r\n EXPOSE 3000\r\n \r\n # Serve o conteúdo da pasta 'dist' (padrão do Vite)\r\n-CMD [\"serve\", \"-s\", \"dist\", \"-l\", \"3000\"]\r\n+CMD [\"serve\", \"-s\", \"dist\", \"-l\", \"0.0.0.0:3000\"]\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1747771046602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,7 @@\n # Expõe a porta\r\n EXPOSE 3000\r\n \r\n # Serve o conteúdo da pasta 'dist' (padrão do Vite)\r\n-CMD [\"serve\", \"-s\", \"dist\", \"-l\", \"0.0.0.0:3000\"]\r\n+CMD [\"serve\", \"-s\", \"dist\", \"-l\", \"3000\"]\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1747780174628,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,25 +1,6 @@\n-# Imagem base com Node.js\r\n FROM node:20-alpine\r\n-\r\n-# Define o diretório de trabalho dentro do container\r\n WORKDIR /app\r\n-\r\n-# Copia os arquivos do projeto para o container\r\n COPY . .\r\n-\r\n-# Instala dependências do projeto\r\n RUN npm install\r\n-\r\n-# Instala servidor estático\r\n-RUN npm install -g serve\r\n-\r\n-# Compila o projeto com Vite\r\n-RUN npm run build\r\n-\r\n-# Expõe a porta\r\n EXPOSE 3000\r\n-\r\n-# Serve o conteúdo da pasta 'dist' (padrão do Vite)\r\n-CMD [\"serve\", \"-s\", \"dist\", \"-l\", \"3000\"]\r\n-\r\n-\r\n+CMD [\"npm\", \"run\", \"dev\"]\r\n"
+                },
+                {
+                    "date": 1747780523693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,25 @@\n+# Imagem base com Node.js\r\n FROM node:20-alpine\r\n+\r\n+# Define o diretório de trabalho dentro do container\r\n WORKDIR /app\r\n+\r\n+# Copia os arquivos do projeto para o container\r\n COPY . .\r\n+\r\n+# Instala dependências do projeto\r\n RUN npm install\r\n+\r\n+# Instala servidor estático\r\n+RUN npm install -g serve\r\n+\r\n+# Compila o projeto com Vite\r\n+RUN npm run build\r\n+\r\n+# Expõe a porta\r\n EXPOSE 3000\r\n-CMD [\"npm\", \"run\", \"dev\"]\r\n+\r\n+# Serve o conteúdo da pasta 'dist' (padrão do Vite)\r\n+CMD [\"serve\", \"-s\", \"dist\", \"-l\", \"3000\"]\r\n+\r\n+\r\n"
+                }
+            ],
+            "date": 1747766907076,
+            "name": "Commit-0",
+            "content": "# Imagem base com Node.js\r\nFROM node:20-alpine\r\n\r\n# Define o diretório de trabalho dentro do container\r\nWORKDIR /app\r\n\r\n# Copia os arquivos do projeto para o container\r\nCOPY . .\r\n\r\n# Instala dependências do projeto\r\nRUN npm install\r\n\r\n# Instala servidor estático\r\nRUN npm install -g serve\r\n\r\n# Compila o projeto com Vite\r\nRUN npm run build\r\n\r\n# Expõe a porta\r\nEXPOSE 3000\r\n\r\n# Serve o conteúdo da pasta 'dist' (padrão do Vite)\r\nCMD [\"serve\", \"-s\", \"dist\", \"-l\", \"3000\"]\r\n\r\n\r\n"
+        }
+    ]
+}

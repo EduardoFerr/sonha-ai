@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Teste de Voz</title>
+</head>
+<body>
+  <h1>🎤 Reconhecimento de Voz (Web Speech API)</h1>
+
+  <button id="start">Iniciar</button>
+  <button id="stop">Parar</button>
+
+  <p><strong>Status:</strong> <span id="status">Parado</span></p>
+  <p><strong>Texto:</strong></p>
+  <pre id="output"></pre>
+
+  <script>
+    const status = document.getElementById('status');
+    const output = document.getElementById('output');
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+      alert('Seu navegador não suporta a Web Speech API');
+    } else {
+      const recognition = new SpeechRecognition();
+      recognition.lang = 'pt-BR';
+      recognition.continuous = true;
+      recognition.interimResults = true;
+
+      recognition.onstart = () => {
+        status.textContent = 'Gravando...';
+      };
+
+      recognition.onend = () => {
+        status.textContent = 'Parado';
+      };
+
+      recognition.onerror = (event) => {
+        status.textContent = `Erro: ${event.error}`;
+        console.error('Erro:', event.error);
+      };
+
+      recognition.onresult = (event) => {
+        const texto = Array.from(event.results)
+          .map(r => r[0].transcript)
+          .join(' ');
+        output.textContent = texto;
+      };
+
+      document.getElementById('start').addEventListener('click', () => {
+        try {
+          recognition.start(); // deve ser chamado diretamente após o clique
+        } catch (e) {
+          console.error('Erro ao iniciar:', e);
+        }
+      });
+
+      document.getElementById('stop').addEventListener('click', () => {
+        recognition.stop();
+      });
+    }
+  </script>
+</body>
+</html>

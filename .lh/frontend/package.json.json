@@ -1,0 +1,18 @@
+{
+    "sourceFile": "frontend/package.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1747769835829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1747769835829,
+            "name": "Commit-0",
+            "content": "{\n  \"name\": \"frontend\",\n  \"private\": true,\n  \"version\": \"0.0.0\",\n  \"type\": \"module\",\n  \"scripts\": {\n    \"dev\": \"vite --host\",\n    \"build\": \"tsc -b && vite build\",\n    \"lint\": \"eslint .\",\n    \"preview\": \"vite preview\"\n  },\n  \"dependencies\": {\n    \"@capacitor-community/speech-recognition\": \"^7.0.0\",\n    \"@capacitor/android\": \"^7.2.0\",\n    \"@capacitor/core\": \"^7.2.0\",\n    \"react\": \"^19.1.0\",\n    \"react-dom\": \"^19.1.0\"\n  },\n  \"devDependencies\": {\n    \"@capacitor/cli\": \"^7.2.0\",\n    \"@eslint/js\": \"^9.25.0\",\n    \"@tailwindcss/cli\": \"^4.1.7\",\n    \"@tailwindcss/postcss\": \"^4.1.7\",\n    \"@tailwindcss/vite\": \"^4.1.7\",\n    \"@types/node\": \"^22.15.19\",\n    \"@types/react\": \"^19.1.4\",\n    \"@types/react-dom\": \"^19.1.5\",\n    \"@vitejs/plugin-react\": \"^4.4.1\",\n    \"autoprefixer\": \"^10.4.21\",\n    \"eslint\": \"^9.25.0\",\n    \"eslint-plugin-react\": \"^7.37.5\",\n    \"eslint-plugin-react-hooks\": \"^5.2.0\",\n    \"eslint-plugin-react-refresh\": \"^0.4.19\",\n    \"globals\": \"^16.0.0\",\n    \"postcss\": \"^8.5.3\",\n    \"tailwindcss\": \"^4.1.7\",\n    \"typescript\": \"~5.8.3\",\n    \"typescript-eslint\": \"^8.30.1\",\n    \"vite\": \"^6.3.5\"\n  }\n}\n"
+        }
+    ]
+}
